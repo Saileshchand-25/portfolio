@@ -9,6 +9,7 @@
 body {
     color: #ff0000;
     background: black;
+    overflow-x: hidden;
 }
 
 .header {
@@ -58,18 +59,17 @@ body {
     position: relative;
     padding-top: 120px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100vh;
     background: black;
     display: flex;
-    align-items: center;
-    padding: 70px 10% 0;
+    align-items: left;
+    padding: 120px 10% ;
 }
 
 .home-content {
     max-width: 600px;
-    margin-top: 8rem;
-    margin-left: -59rem;
+   max-width: 600px;
 
 }
 
@@ -160,23 +160,26 @@ body {
 
 .About {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: -19rem;
-
-
+    gap: 2rem;
+    margin-top: 4rem;
 }
 
-.About-img img {
-    padding-bottom: 35%;
-    max-width: 550px;
-    padding-left: 14.3rem;
-    padding-top: 20.8rem;
+img {
+    max-width: 100%;
     height: auto;
-    width: 100%;
-    /* border-radius: 8px; */
+}
 
+
+.About-img img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding: 0;
+    object-fit: contain;
 }
 
 .About-text h2 {
@@ -649,54 +652,126 @@ section {
     }
 }
 
-/* ================= MOBILE FIX ================= */
-/* @media (max-width: 768px) {
 
-    .container {
-        padding: 60px 20px;
-    }
-
-    .container1 {
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-        padding: 40px 20px;
-    }
-
-    .home {
-        height: auto;
-        padding: 120px 20px 60px;
-    }
-
-    .header {
-        padding: 15px 10px;
-    }
-} */
-/* ===== GLOBAL FIX ===== */
 body {
     overflow-x: hidden;
 }
 
-/* ===== RESPONSIVE FIX ===== */
-@media (max-width: 768px) {
 
-    .header {
-        position: relative;
-    }
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* ===== Tablets (≤1024px) ===== */
+@media (max-width: 1024px) {
 
     .home {
-        height: auto;
-        padding: 100px 20px 40px;
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 5% 60px;
     }
 
-    .container {
-        padding: 60px 20px;
+    .home-content {
+        margin: 0;
+    }
+
+    .About {
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    .About-img img {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .Services-list {
+        padding-left: 0;
+        margin-right: 0;
+    }
+
+    .Technical-bars {
+        margin-left: 0;
     }
 
     .container1 {
         width: 100%;
-        height: auto;
+        padding: 20px;
         margin-left: 0;
-        padding: 30px 20px;
+    }
+}
+
+/* ===== Mobile (≤768px) ===== */
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        align-items: flex-start; /* LEFT */
+        text-align: left;
+        padding: 100px 20px;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+}
+
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    .sub-title {
+        font-size: 40px;
+        padding-top: 5rem;
+    }
+
+    .Services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .Portfolio-content {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+    }
+
+    .radial-bar {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ===== Small Phones (≤480px) ===== */
+@media (max-width: 480px) {
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .btn-box {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .radial-bar {
+        width: 130px;
+        height: 130px;
     }
 }
